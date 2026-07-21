@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kah Wei - Trainer Profile</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f8f8;
+      color: #fff;
+    }
+
+    .profile-card {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: #d0001f;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .profile-image {
+      flex: 1 1 300px;
+      min-width: 300px;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-details {
+      flex: 2 1 400px;
+      padding: 30px;
+    }
+
+    .profile-details h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .profile-details h2 {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      font-weight: normal;
+    }
+
+    .interests {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    .section-toggle {
+      margin-bottom: 20px;
+    }
+
+    .section-toggle button {
+      background-color: #fff;
+      color: #d0001f;
+      border: 2px solid #fff;
+      padding: 8px 16px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .section-toggle button:hover {
+      background-color: #fff;
+      color: #d0001f;
+    }
+
+    .section-block {
+      background: #b8001a;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    .section-block h3 {
+      margin-top: 0;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-block ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .section-block li {
+      margin: 6px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .section-block li::before {
+      content: "•";
+      color: white;
+      position: absolute;
+      left: 0;
+    }
+
+    .philosophy {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px 20px;
+      border-left: 5px solid #ffffff;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+
+    .philosophy h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .philosophy p {
+      font-style: italic;
+      color: #f0f0f0;
+      margin: 0;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #d0001f;
+      border-radius: 6px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5em;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .member-id-section {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #b8001a;
+      border-radius: 8px;
+    }
+
+    .member-id-section input {
+      padding: 8px;
+      width: 80%;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .member-id-section button {
+      padding: 8px 12px;
+      background-color: #fff;
+      color: #d0001f;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #qr-code {
+      margin-top: 10px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #fff;
+      color: #d0001f;
+      border: 2px solid #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .back-link:hover {
+      background-color: #fff;
+      color: #d0001f;
+    }
+
+    /* Testimonial Carousel Styles */
+    .testimonial-section {
+      background-color: #fff;
+      padding: 40px 20px;
+      margin: 40px auto;
+      border-top: 4px solid #d0001f;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+      max-width: 1000px;
+    }
+
+    .testimonial-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .testimonial-container h2 {
+      font-size: 2em;
+      color: #d0001f;
+      margin-bottom: 30px;
+    }
+
+    .carousel {
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .carousel-inner {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel-slide {
+      display: none;
+      text-align: center;
+      transition: opacity 0.5s ease;
+    }
+
+    .carousel-slide.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    .carousel-image {
+  max-width: 100%;
+  height: 500px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 3px solid #d0001f;
+  background-color: #000; /* optional: to fill empty space */
+}
+
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .carousel-arrow {
+      background: #d0001f;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      margin: 0 10px;
+      transition: background 0.3s;
+    }
+
+    .carousel-arrow:hover {
+      background: #b8001a;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .indicator.active {
+      background-color: #d0001f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Profile Card -->
+  <div class="profile-card">
+    <div class="profile-image">
+      <img src="Kah Wei.jpeg" alt="Kah Wei - Trainer">
+    </div>
+    <div class="profile-details">
+      <h1>Kah Wei</h1>
+      <h2>Senior Coach</h2>
+      <div class="interests">
+        <strong>Into:</strong> Bodybuilding | Nutrition for body composition | Travelling
+      </div>
+
+      <div class="section-toggle">
+        <button onclick="showSkills()">Show Skills</button>
+        <button onclick="showCertifications()">Show Certifications</button>
+      </div>
+
+      <div id="toggle-section" class="section-block">
+        <h3 id="toggle-title">Skills</h3>
+        <ul id="toggle-content">
+          <li>Strength and conditioning</li>
+          <li>Bodybuilding</li>
+          <li>Body re-composition</li>
+        </ul>
+      </div>
+
+      <div class="philosophy">
+        <h3>Philosophy</h3>
+        <p>Bodybuilding is not an overnight sprint. It requires discipline, consistency and mental fortitude. If you have these 3 aspects ready in your life, you're pretty much unstoppable in attaining whatever you want be it in or outside the gym.</p>
+      </div>
+
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="notification" style="background-color: rgba(255,255,255,0.2); padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+          <p style="margin: 0; font-style: italic;">After scanning the QR Code, our trainers will contact you within 24-48 hours.</p>
+        </div>
+        <div class="member-id-section">
+          <label for="memberId">Enter Your Member ID:</label><br>
+          <input type="text" id="memberId" placeholder="e.g. 123456789"><br>
+          <button onclick="generateQRCode()">Generate QR Code</button>
+          <div id="qr-code"></div>
+        </div>
+      </div>
+      <a class="back-link" href="Main.html">← Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Testimonial Carousel -->
+  <section class="testimonial-section">
+    <div class="testimonial-container">
+      <h2>Client Transformations</h2>
+      
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-slide active">
+            <img src="client1.jpg" alt="Client transformation" class="carousel-image">
+          </div>
+          <div class="carousel-slide">
+            <img src="client2.jpg" alt="Client transformation" class="carousel-image">
+          </div>
+          <div class="carousel-slide">
+            <img src="client3.jpg" alt="Client transformation" class="carousel-image">
+          </div>
+          <div class="carousel-slide">
+            <img src="client4.jpg" alt="Client transformation" class="carousel-image">
+          </div>
+        </div>
+        
+        <div class="carousel-controls">
+          <button class="carousel-arrow prev" onclick="moveSlide(-1)">❮</button>
+          <button class="carousel-arrow next" onclick="moveSlide(1)">❯</button>
+        </div>
+        
+        <div class="carousel-indicators">
+          <span class="indicator active" onclick="goToSlide(0)"></span>
+          <span class="indicator" onclick="goToSlide(1)"></span>
+          <span class="indicator" onclick="goToSlide(2)"></span>
+          <span class="indicator" onclick="goToSlide(3)"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <script>
+    // Skills/Certifications Toggle
+    const skills = [
+      "Strength and conditioning",
+      "Bodybuilding",
+      "Body re-composition"
+    ];
+
+    const certifications = [
+      "ACE certified pt"
+    ];
+
+    function showSkills() {
+      document.getElementById("toggle-title").textContent = "Skills";
+      document.getElementById("toggle-content").innerHTML = skills.map(item => `<li>${item}</li>`).join('');
+    }
+
+    function showCertifications() {
+      document.getElementById("toggle-title").textContent = "Certifications";
+      document.getElementById("toggle-content").innerHTML = certifications.map(item => `<li>${item}</li>`).join('');
+    }
+
+    // QR Code Generator
+    function generateQRCode() {
+      const memberId = document.getElementById("memberId").value || "___________";
+      const email = "Kah.Wei@virginactive.com.sg";
+      const subject = "Training Inquiry";
+      const body = `Hello Kah Wei,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0AI am interested in more about personal training and would like to have a wellness consultation.`;
+      
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+      document.getElementById("qr-code").innerHTML = "";
+      new QRCode(document.getElementById("qr-code"), {
+        text: mailtoLink,
+        width: 150,
+        height: 150,
+        colorDark: "#ffffff",
+        colorLight: "#d0001f",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+
+    // Carousel Functionality
+    let currentSlideIndex = 0;
+    let slideInterval;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const rotationSpeed = 3000; // 3 seconds between slides
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      indicators.forEach(indicator => indicator.classList.remove('active'));
+      
+      currentSlideIndex = index;
+      slides[currentSlideIndex].classList.add('active');
+      indicators[currentSlideIndex].classList.add('active');
+    }
+
+    function moveSlide(direction) {
+      let newIndex = currentSlideIndex + direction;
+      
+      if (newIndex < 0) {
+        newIndex = slides.length - 1;
+      } else if (newIndex >= slides.length) {
+        newIndex = 0;
+      }
+      
+      showSlide(newIndex);
+      resetInterval(); // Reset the auto-rotation timer when manually navigating
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+      resetInterval(); // Reset the auto-rotation timer when clicking dots
+    }
+
+    function startAutoRotation() {
+      slideInterval = setInterval(() => moveSlide(1), rotationSpeed);
+    }
+
+    function resetInterval() {
+      clearInterval(slideInterval);
+      startAutoRotation();
+    }
+
+    // Pause auto-rotation when hovering over carousel
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    carousel.addEventListener('mouseleave', startAutoRotation);
+
+    // Initialize on load
+    window.onload = function() {
+      showSkills();
+      showSlide(0);
+      startAutoRotation(); // Start auto-rotation when page loads
+    };
+  </script>
+</body>
+</html>

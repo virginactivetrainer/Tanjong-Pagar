@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tiffany Teo - Trainer Profile</title>
+   <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f8f8;
+      color: #fff;
+    }
+
+    .profile-card {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: #d0001f;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .profile-image {
+      flex: 1 1 300px;
+      min-width: 300px;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-details {
+      flex: 2 1 400px;
+      padding: 30px;
+    }
+
+    .profile-details h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .profile-details h2 {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      font-weight: normal;
+    }
+
+    .interests {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    /* --- START OF CSS CHANGES FOR TOGGLING AND ALWAYS VISIBLE SECTIONS --- */
+    .section-toggle { /* CSS for the button container */
+      margin-bottom: 20px;
+    }
+
+    .section-toggle button { /* CSS for the toggle buttons */
+      background-color: #fff;
+      color: #d0001f;
+      border: 2px solid #fff;
+      padding: 8px 16px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .section-toggle button:hover {
+      background-color: #fff;
+      color: #d0001f;
+    }
+
+    .section-block { /* CSS for the toggled content area (Skills or Certifications) */
+      background: #b8001a;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    .section-block h3 {
+      margin-top: 0;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-block ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .section-block li {
+      margin: 6px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .section-block li::before {
+      content: "•";
+      color: white;
+      position: absolute;
+      left: 0;
+    }
+
+    .philosophy { /* CSS for the always visible Philosophy section */
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px 20px;
+      border-left: 5px solid #ffffff;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+
+    .philosophy h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .philosophy p {
+      font-style: italic;
+      color: #f0f0f0;
+      margin: 0;
+    }
+
+    .contact-info { /* CSS for the always visible Contact Info section */
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #d0001f;
+      border-radius: 6px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5em;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .contact-info p {
+      font-size: 1.1em;
+      color: #fff;
+    }
+    /* --- END OF CSS CHANGES FOR TOGGLING AND ALWAYS VISIBLE SECTIONS --- */
+.member-id-section {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #b8001a;
+      border-radius: 8px;
+    }
+
+    .member-id-section input {
+      padding: 8px;
+      width: 80%;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .member-id-section button {
+      padding: 8px 12px;
+      background-color: #fff;
+      color: #d0001f;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #qr-code {
+      margin-top: 10px;
+    }
+
+    /* --- START OF CSS CHANGE FOR BACK LINK STYLING --- */
+    .back-link { /* CSS for the Back to Home link, styled as a button */
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #fff; /* White background */
+      color: #d0001f; /* Red text color */
+      border: 2px solid #fff; /* White border */
+      padding: 10px 20px; /* Add padding */
+      cursor: pointer; /* Indicate it's clickable */
+      font-weight: bold; /* Bold text */
+      border-radius: 5px; /* Rounded corners */
+      text-decoration: none; /* Remove underline */
+      transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+    }
+
+    .back-link:hover {
+      background-color: #fff; /* Keep background white on hover */
+      color: #d0001f; /* Keep text red on hover */
+    }
+    /* --- END OF CSS CHANGE FOR BACK LINK STYLING --- */
+
+
+    /* Testimonials Section */
+    .testimonial-section {
+      background-color: #fff;
+      padding: 40px 20px;
+      margin: 40px auto;
+      border-top: 4px solid #d0001f;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+      max-width: 1000px;
+    }
+
+    .testimonial-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      color: #333;
+    }
+
+    .testimonial-container h2 {
+      font-size: 2em;
+      color: #d0001f;
+      margin-bottom: 20px;
+    }
+
+    .placeholder {
+      font-style: italic;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card">
+    <div class="profile-image">
+      <img src="Tiffany.jpg" alt="Tiffany Teo - Trainer" />
+    </div>
+    <div class="profile-details">
+      <h1>Tiffany</h1>
+      <h2>Coach</h2>
+      <div class="interests">
+        <strong>Into:</strong> fitness | music | social photograph | piano | yoga
+      </div>
+
+      <div class="section-toggle">
+        <button onclick="showSkills()">Show Skills</button>
+        <button onclick="showCertifications()">Show Certifications</button>
+      </div>
+
+      <div id="toggle-section" class="section-block">
+        <h3 id="toggle-title">Skills</h3>
+        <ul id="toggle-content">
+          <li>Personalized programs</li>
+          <li>Functional strength & mobility</li>
+          <li>Enhance body composition (⬆️ lean muscle mass & ⬇️ body fat mass)</li>
+          <li>Injury prevention & posture correction</li>
+          <li>Supportive coaching for long-term results</li>
+          <li>Balanced nutrition suggestions</li>
+        </ul>
+      </div>
+
+      <div class="philosophy">
+        <h3>Philosophy</h3>
+        <p>"Fitness should help you live better, not stress you out or limit your joy. <br><br>Strong people ask for help, and that’s how real progress begins."</p>
+      </div>
+
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="notification" style="background-color: rgba(255,255,255,0.2); padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+    <p style="margin: 0; font-style: italic;">After scanning the QR Code, our trainers will contact you within 24-48 hours.</p>
+  </div>
+        <!-- Member ID + QR Code -->
+        <div class="member-id-section">
+          <label for="memberId">Enter Your Member ID:</label><br>
+          <input type="text" id="memberId" placeholder="e.g. 123456789"/><br>
+          <button onclick="generateQRCode()">Generate QR Code</button>
+          <div id="qr-code"></div>
+        </div>
+      </div>
+
+      <a class="back-link" href="Main.html">← Back to Home</a>
+    </div>
+  </div>
+
+  <section class="testimonial-section">
+    <div class="testimonial-container">
+      <h2>Client Testimonials</h2>
+      <p class="placeholder">No testimonials available yet. Check back soon!</p>
+    </div>
+  </section>
+
+    <!-- QR Code Library -->
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <script>
+    const skills = [
+    "Personalized programs",
+    "Functional strength & mobility",
+    "Enhance body composition (⬆️ lean muscle mass & ⬇️ body fat mass)y",
+    "Injury prevention & posture correction",
+    "Supportive coaching for long-term results",
+    "Balanced nutrition suggestions"  
+    ];
+    const certifications = ["No Certifications available yet. Check back soon!"];
+
+    function showSkills() {
+      document.getElementById("toggle-title").textContent = "Skills";
+      document.getElementById("toggle-content").innerHTML = skills.map(item => `<li>${item}</li>`).join('');
+    }
+
+    function showCertifications() {
+      document.getElementById("toggle-title").textContent = "Certifications";
+      document.getElementById("toggle-content").innerHTML = certifications.map(item => `<li>${item}</li>`).join('');
+    }
+
+    function generateQRCode() {
+      const memberId = document.getElementById("memberId").value || "___________";
+      const email = "Faith.Lu@virginactive.com.sg";
+      const subject = "Training Inquiry";
+      const body = `Hello Faith,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0AI am interested in more about personal training and would like to have a wellness consultation.`;
+
+
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+      document.getElementById("qr-code").innerHTML = "";
+      new QRCode(document.getElementById("qr-code"), {
+        text: mailtoLink,
+        width: 150,
+        height: 150,
+        colorDark: "#ffffff",
+        colorLight: "#d0001f",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+
+    window.onload = function() {
+      showSkills();
+    };
+  </script>
+</body>
+</html>
