@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virgin Active Fitness Coaching</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .sidebar-transition {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sticky-trainer-bar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+        .trainer-bar-logo {
+            position: absolute;
+            right: 5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: auto;
+            z-index: 10;
+        }
+        .sidebar-logo {
+            width: 80px;
+        }
+        .price-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        .package-detail {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .package-detail:hover {
+            background: white !important;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .package-detail:hover h4,
+        .package-detail:hover .text-white {
+            color: #ef4444 !important;
+        }
+        .package-detail:hover .text-white\/80 {
+            color: #6b7280 !important;
+        }
+        .package-detail:hover .border-white\/20 {
+            border-color: #e5e7eb !important;
+        }
+        .coach-select {
+            background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='%23ffffff' d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/12px 12px;
+            padding-right: 2.5rem;
+        }
+        .trainer-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .trainer-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .trainer-card img {
+            object-position: center center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Hamburger Button -->
+    <button id="menuButton" class="fixed right-4 top-4 z-50 p-3 bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-700 transition-colors">
+        ☰
+    </button>
+
+    <!-- Side Navigation -->
+    <aside id="sideNav" class="w-64 h-screen bg-black fixed right-0 top-0 sidebar-transition transform translate-x-full z-40">
+        <div class="flex justify-center pt-4">
+             <img src="virgin-active-logo.png" alt="Virgin Active Logo" class="sidebar-logo">
+        </div>
+        <div class="pt-16 p-4">
+            <nav>
+                <ul class="space-y-4">
+                    <li><a href="index.html" class="block p-2 text-red-500 hover:bg-red-600 hover:text-white rounded-lg">Home</a></li>
+                    <li><a href="#trainers" class="block p-2 text-red-500 hover:bg-red-600 hover:text-white rounded-lg">Trainers</a></li>
+                    <li><a href="#pricing" class="block p-2 text-red-500 hover:bg-red-600 hover:text-white rounded-lg">Pricing</a></li>
+                    <li><a href="#contact" class="block p-2 text-red-500 hover:bg-red-600 hover:text-white rounded-lg">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <main>
+        <!-- Our Trainers Bar with Logo -->
+        <div id="trainerBar" class="bg-black text-white text-center py-6 sticky-trainer-bar flex items-center justify-center relative">
+             <!-- Virgin Active Logo inside the bar - Now positioned absolutely -->
+             <img id="mainLogo" src="virgin-active-logo.png" alt="Virgin Active Logo" class="trainer-bar-logo">
+             <h1 class="text-3xl font-bold">Meet Our Trainers</h1>
+        </div>
+
+        <!-- Specialist Coaches Section -->
+        <section id="trainers">
+            <div class="text-center py-16 px-4">
+    <h2 class="text-3xl font-bold text-red-600 mb-12">Specialist Coaches</h2>
+    <div class="flex justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+            <!-- Syam -->
+            <div class="flex justify-center">
+                <a href="Trainer/Syam.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl w-full max-w-xs">
+                    <img src="Trainer/Syam.jpg" alt="Syam" class="w-full h-80 object-cover object-center"">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Syam</h3>
+                        <p class="text-red-600 text-sm font-medium">Fitness Manager & Specialist Coach</p>
+                    </div>
+                </a>
+            </div>
+    </div>
+</div>
+<!-- Senior Coaches -->
+<div class="text-center py-16 px-4 bg-gray-50">
+    <h2 class="text-3xl font-bold text-red-600 mb-12">Senior Coaches</h2>
+    <div class="flex justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
+            <!-- Kah Wei -->
+            <div class="flex justify-center">
+                <a href="Trainer/Kah_Wei.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl w-full max-w-xs">
+                    <img src="Trainer/Kah Wei.jpeg" alt="Kah Wei" class="w-full h-80 object-cover object-center">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Kah Wei</h3>
+                        <p class="text-red-600 text-sm font-medium">Senior Coach</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Ivan -->
+            <div class="flex justify-center">
+                <a href="Trainer/ivan.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl w-full max-w-xs">
+                    <img src="Trainer/Ivan.jpg" alt="Ivan" class="w-full h-80 object-cover object-center">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Ivan</h3>
+                        <p class="text-red-600 text-sm font-medium">Senior Coach</p>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Vanessa -->
+            <div class="flex justify-center">
+                <a href="Trainer/vanessa.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl w-full max-w-xs">
+                    <img src="Trainer/Vanessa .jpg" alt="Vanessa" class="w-full h-80 object-cover object-center">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Vanessa</h3>
+                        <p class="text-red-600 text-sm font-medium">Senior Coach</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- Coaches -->
+            <div class="text-center py-16 px-4">
+                <h2 class="text-3xl font-bold text-red-600 mb-12">Certified Coaches</h2>
+                <div class="flex justify-center">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl w-full">
+                        <a href="Trainer/shawn.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
+                            <img src="Trainer/Shawn.jpg" alt="Shawn" class="w-full h-80 object-cover">
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Shawn</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
+                        </a>
+                        <a href="Trainer/Li_Ting.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
+                            <img src="Trainer/Li Ting.jpg" alt="Li Ting" class="w-full h-80 object-cover">
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Li Ting</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
+                        </a>
+                        <a href="Trainer/kheng.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
+                            <img src="Trainer/Kheng.jpg" alt="Kheng" class="w-full h-80 object-cover">
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Kheng</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
+                        </a>
+                        <a href="Trainer/roy.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
+                            <img src="Trainer/Roy.jpg" alt="Roy" class="w-full h-80 object-cover">
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Roy</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
+                        </a>
+                        <a href="Trainer/nicole.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
+                            <img src="Trainer/Nicole.jpg" alt="Nicole" class="w-full h-80 object-cover">
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Nicole</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
+                        </a>
+                        <a href="Trainer/Firdanil.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
+                            <img src="Trainer/Firdnail.jpg" alt="Firdanil" class="w-full h-80 object-cover">
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Firdanil</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
+                        </a>
+                        <a href="Trainer/Kar Thing.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
+                            <img src="Trainer/Karthing.jpg" alt="Chia Kar Thing" class="w-full h-80 object-cover">
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Chia Kar Thing</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
+                        </a>
+
+                        <a href="Trainer/Faith.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
+                            <img src="Trainer/Faith.jpg" alt="Faith" class="w-full h-80 object-cover">
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Faith</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
+                        </a>
+                        <a href="Trainer/Tiffany.html" class="trainer-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
+                            <img src="Trainer/Tiffany.jpg" alt="Tiffany Teo" class="w-full h-80 object-cover">
+                            <div class="p-6 text-center"><h3 class="text-xl font-bold">Tiffany Teo</h3><p class="text-red-600 text-sm font-medium">Coach</p></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Pricing Section -->
+        <section id="pricing" class="bg-gradient-to-b from-red-700 to-red-600 text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-12 relative pb-4 after:content-[''] after:block after:w-20 after:h-1 after:bg-white after:mx-auto after:mt-4">
+                    Training Packages
+                </h2>
+
+                <div class="mb-16">
+                    <label for="coachType" class="block mb-4 text-xl font-medium">Select Coach Type:</label>
+                    <select id="coachType" class="coach-select text-white bg-red-800/30 border-2 border-white/20 rounded-xl px-6 py-3 text-lg focus:ring-2 focus:ring-white/40 focus:border-transparent appearance-none">
+                        <option value="coach">Coach</option>
+                        <option value="senior">Senior Coach</option>
+                        <option value="specialist">Specialist Coach</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-8 mb-20">
+                    <!-- Full Throttle -->
+                    <div class="price-card bg-white/10 backdrop-blur-sm rounded-xl shadow-2xl p-8 w-80 hover:bg-white/20">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-black mb-4">FULL THROTTLE</h3>
+                            <div class="space-y-2">
+                                <p class="text-3xl font-bold coach-price">$117<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold senior-price hidden">$132<small class="text-lg">/session</small></p>
+                                <p class="text-3xl font-bold specialist-price hidden">$147<small class="text-lg">/session</small></p>
+                            </div>
+                        </div>
+                        <div class="border-t border-white/20 pt-6">
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    12-week commitment
+                                </li>
+                                <li class="flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    Serious transformation focus
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Accelerate -->
+                    <div class="price-card bg-white/10 backdrop-blur-sm rounded-xl shadow-2xl p-8 w-80 hover:bg-white/20">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-black mb-4">ACCELERATE</h3>
+                            <div class="space-y-2">
+                                <p class="text-3xl font-bold coach-price">$1225</p>
+                                <p class="text-3xl font-bold senior-price hidden">$1375</p>
+                                <p class="text-3xl font-bold specialist-price hidden">$1525</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-white/20 pt-6">
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    10 sessions package
+                                </li>
+                                <li class="flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    3 Month Expiry
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Kickstart -->
+                    <div class="price-card bg-white/10 backdrop-blur-sm rounded-xl shadow-2xl p-8 w-80 hover:bg-white/20">
+                         <div class="mb-6">
+                            <h3 class="text-2xl font-black mb-4">KICKSTART</h3>
+                            <div class="space-y-2">
+                                <p class="text-3xl font-bold coach-price">$415</p>
+                                <p class="text-3xl font-bold senior-price hidden">$460</p>
+                                <p class="text-3xl font-bold specialist-price hidden">$505</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-white/20 pt-6">
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    3 sessions Package
+                                </li>
+                                <li class="flex items-center justify-center gap-2">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                                    1 month Expiry
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Throttle Options -->
+                <h3 class="text-3xl font-bold mb-12">Full Throttle Plans</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <!-- FT1 -->
+                    <div class="package-detail rounded-xl p-6">
+                        <div class="mb-4">
+                            <h4 class="text-2xl font-black text-white">FT1</h4>
+                            <p class="text-sm text-white/80">Once Every Twice a Week</p>
+                        </div>
+                        <div class="text-3xl font-bold space-y-2 text-white">
+                            <p class="coach-price">$117<small class="text-lg"></small></p>
+                            <p class="senior-price hidden">$132<small class="text-lg"></small></p>
+                            <p class="specialist-price hidden">$147<small class="text-lg"></small></p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-white/20">
+                            <p class="text-sm text-white/80">Perfect for busy schedules</p>
+                        </div>
+                    </div>
+                    <!-- FT2 -->
+                    <div class="package-detail rounded-xl p-6">
+                        <div class="mb-4">
+                            <h4 class="text-2xl font-black text-white">FT2</h4>
+                            <p class="text-sm text-white/80">Once Every Week</p>
+                        </div>
+                        <div class="text-3xl font-bold space-y-2 text-white">
+                            <p class="coach-price">$234<small class="text-lg"></small></p>
+                            <p class="senior-price hidden">$264<small class="text-lg"></small></p>
+                            <p class="specialist-price hidden">$294<small class="text-lg"></small></p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-white/20">
+                            <p class="text-sm text-white/80">Consistent weekly progress</p>
+                        </div>
+                    </div>
+                    <!-- FT4 -->
+                    <div class="package-detail rounded-xl p-6">
+                        <div class="mb-4">
+                            <h4 class="text-2xl font-black text-white">FT4</h4>
+                            <p class="text-sm text-white/80">Twice Every Week</p>
+                        </div>
+                        <div class="text-3xl font-bold space-y-2 text-white">
+                            <p class="coach-price">$468<small class="text-lg"></small></p>
+                            <p class="senior-price hidden">$528<small class="text-lg"></small></p>
+                            <p class="specialist-price hidden">$588<small class="text-lg"></small></p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-white/20">
+                            <p class="text-sm text-white/80">Accelerated results</p>
+                        </div>
+                    </div>
+                    <!-- FT6 -->
+                    <div class="package-detail rounded-xl p-6">
+                        <div class="mb-4">
+                            <h4 class="text-2xl font-black text-white">FT6</h4>
+                            <p class="text-sm text-white/80">Thrice Every Week</p>
+                        </div>
+                        <div class="text-3xl font-bold space-y-2 text-white">
+                            <p class="coach-price">$702<small class="text-lg"></small></p>
+                            <p class="senior-price hidden">$792<small class="text-lg"></small></p>
+                            <p class="specialist-price hidden">$882<small class="text-lg"></small></p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-white/20">
+                            <p class="text-sm text-white/80">Maximum intensity and support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="py-20 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-12 relative pb-4 after:content-[''] after:block after:w-20 after:h-1 after:bg-red-600 after:mx-auto after:mt-4">
+                    Contact Us
+                </h2>
+                
+                <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-2xl p-8">
+                    <form id="membershipForm" class="space-y-6" action="https://formspree.io/f/xanolrbw" method="POST">
+                        <div>
+                            <label for="memberId" class="block text-lg font-medium mb-2 text-gray-700">Member ID Number</label>
+                            <input type="text" id="memberId" name="memberId" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Enter your member ID" />
+                        </div>
+                        <div>
+                            <label for="trainer" class="block text-lg font-medium mb-2 text-gray-700">Select Your Preferred Trainer</label>
+                            <select id="trainer" name="trainer" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-700 appearance-none focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                                <option value="" disabled selected>Select your trainer</option>
+                                <optgroup label="Specialist Coaches">
+                                    <option value="syam">Syam</option>
+                                    <option value="ivan">Ivan</option>
+                                </optgroup>
+                                <optgroup label="Senior Coaches">
+                                    <option value="kah_wei">Kah Wei</option>
+                                    <option value="ivan">Ivan</option>
+                                </optgroup>
+                                <optgroup label="Coaches">
+                                    <option value="shawn">Shawn</option>
+                                    <option value="li_ting">Li Ting</option>
+                                    <option value="kheng">Kheng</option>
+                                    <option value="vanessa">Vanessa</option>
+                                    <option value="roy">Roy</option>
+                                    <option value="nicole">Nicole</option>
+                                    <option value="firdanil">Firdanil</option>
+                                    <option value="Kar Thing">Kar Thing</option>
+
+                                    <option value="Faith">Faith</option>
+                                    <option value="Tiffany">Tiffany</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        
+                        <div class="mt-4 flex items-center">
+                            <input type="checkbox" id="pdaConsent" required class="w-6 h-6 accent-red-600 border-gray-300 rounded" />
+                            <label for="pdaConsent" class="ml-3 text-lg font-medium text-gray-700">
+                                I understand that my data will be used in accordance with our Privacy & Data Handling practices.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 transition-colors duration-300 text-lg mt-4">
+                            Submit Request
+                        </button>
+                    </form>
+                    <div id="pdaMessage" class="hidden mt-4 text-green-600 font-semibold">
+                        Thank you! Your submission has been received and will be handled according to our Privacy & Data Handling practices.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Sidebar toggle
+        const menuButton = document.getElementById('menuButton');
+        const sideNav = document.getElementById('sideNav');
+        const mainLogo = document.getElementById('mainLogo');
+
+        function toggleSidebar() {
+            sideNav.classList.toggle('translate-x-full');
+            mainLogo.classList.toggle('hidden');
+        }
+
+        menuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleSidebar();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!sideNav.contains(e.target) && !menuButton.contains(e.target)) {
+                if (!sideNav.classList.contains('translate-x-full')) {
+                    toggleSidebar();
+                }
+            }
+        });
+
+        // Coach type selector functionality
+        const coachTypeSelect = document.getElementById('coachType');
+        
+        function updatePrices() {
+            const selectedValue = coachTypeSelect.value;
+            
+            // Hide all prices first
+            document.querySelectorAll('.coach-price, .senior-price, .specialist-price').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Show the selected prices
+            if (selectedValue === 'coach') {
+                document.querySelectorAll('.coach-price').forEach(el => el.classList.remove('hidden'));
+            } else if (selectedValue === 'senior') {
+                document.querySelectorAll('.senior-price').forEach(el => el.classList.remove('hidden'));
+            } else if (selectedValue === 'specialist') {
+                document.querySelectorAll('.specialist-price').forEach(el => el.classList.remove('hidden'));
+            }
+        }
+
+        // Initialize prices on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            coachTypeSelect.value = 'coach';
+            updatePrices();
+        });
+
+        // Update prices when selection changes
+        coachTypeSelect.addEventListener('change', updatePrices);
+
+        // Form submission handler
+        document.getElementById('membershipForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (!document.getElementById('pdaConsent').checked) {
+                alert('Please agree to the Privacy & Data Handling practices to proceed.');
+                return;
+            }
+
+            const form = this;
+            const formData = new FormData(form);
+
+            fetch('https://formspree.io/f/xpwdngnd', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('pdaMessage').classList.remove('hidden');
+                    form.reset();
+                    document.getElementById('pdaConsent').checked = false;
+                } else {
+                    alert('There was an error submitting your request. Please try again.');
+                }
+            })
+            .catch(error => {
+                alert('There was an error submitting your request. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
