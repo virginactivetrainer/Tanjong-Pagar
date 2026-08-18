@@ -235,23 +235,20 @@
 
   <div class="profile-card">
     <div class="profile-image">
-      <img src="Faith.jpg" alt="Faith - Trainer" />
+      <img src="Glenn.jpg" alt="Glenn - Trainer" />
     </div>
     <div class="profile-details">
       <h1>Glenn</h1>
       <h2>Coach</h2>
       <div class="interests">
-        <strong>Into:</strong> <p>Hi, I’m Glenn, a NASM-certified Personal Trainer with a Diploma in Health Management and Promotion!</p>
-
-        <p>My passion lies in strength and conditioning, martial arts, mobility, and recovery, helping people get stronger, move better, and feel more confident in what their bodies can do.
+        <strong>Into:</strong> <p>Hi, I’m Glenn! I’m a NASM-Certified Personal Trainer with a Diploma in Health Management and Promotion, with a background in strength and conditioning, martial arts, mobility and recovery.
 </p>
 
-        <p>My sports performance experience began as a Sports Scientist Intern in Bangkok, working with HIIT, Tabata, ViPR, and martial arts padwork. 
-          It taught me that great coaching is more than knowing exercises, it’s about listening, communicating, adapting, and making training work for the individual. 
-          Being fluent in Thai has also helped me connect naturally with people from different backgrounds!</p>
+        <p>I believe training should help you feel stronger, move better and feel more confident in what your body can do — while still being something you genuinely enjoy. 
+          My goal is to make every session purposeful, approachable and tailored to you, whether you’re looking to build strength, improve mobility, enhance performance or simply feel better day to day.</p>
 
-        <p>I’m naturally curious and love to keep learning through books, research, and emerging training methods. 
-          I believe training should be effective, approachable, and fun, whether your goal is strength, mobility, fitness, recovery, or simply feeling better day to day.</p>
+        <p>My sports performance experience began as a Sports Scientist Intern in Bangkok, where I worked with HIIT, Tabata, ViPR and martial arts padwork. 
+          That experience taught me that great coaching is about more than knowing exercises — it’s about listening, communicating, adapting and understanding the person in front of you.</p>
       </div>
 
       <div class="section-toggle">
@@ -262,8 +259,14 @@
       <div id="toggle-section" class="section-block">
         <h3 id="toggle-title">Skills</h3>
         <ul id="toggle-content">
-          <li>Fat Loss & Body recomposition</li>
-          <li>Strength Training</li>
+          <li>Strength & Resistance Training</li>
+          <li>Sports performance & conditioning</li>
+          <li>Martial arts & padwork</li>
+          <li>Mobility & movement quality</li>
+          <li>Recovery & injury-aware training</li>
+          <li>Functional fitness & conditioning</li>
+          <li>Beginner-friendly & holistic training</li>
+          <li>Exercise technique & movement confidence</li>
         </ul>
       </div>
 
@@ -301,11 +304,17 @@
   <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
   <script>
     const skills = [
-    "Fat Loss & Body Recomposition",
-    "Strength Training"
+    "Strength & resistance training",
+"Sports performance & conditioning",
+"Martial arts & padwork",
+"Mobility & movement quality",
+"Recovery & injury-aware training",
+"Functional fitness & conditioning",
+"Beginner-friendly & holistic training",
+"Exercise technique & movement confidence"
     ];
     const certifications = ["NASM-certified Personal Trainer",
-                           "Diploma in Health Management and Promotion!"
+                           "Diploma in Health Management and Promotion"
                            ];
 
     function showSkills() {
@@ -320,9 +329,9 @@
 
     function generateQRCode() {
       const memberId = document.getElementById("memberId").value || "___________";
-      const email = "Faith.Lu@virginactive.com.sg";
+      const email = "glenn.chen@virginactive.com.sg";
       const subject = "Training Inquiry";
-      const body = `Hello Faith,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0AI am interested in more about personal training and would like to have a wellness consultation.`;
+      const body = `Hello Glenn,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0AI am interested in more about personal training and would like to have a wellness consultation.`;
 
 
       const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
