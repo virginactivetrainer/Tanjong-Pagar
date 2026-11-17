@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Faith - Trainer Profile</title>
+  <title>Zett - Trainer Profile</title>
    <style>
     body {
       margin: 0;
@@ -238,10 +238,10 @@
       <img src="Faith.jpg" alt="Faith - Trainer" />
     </div>
     <div class="profile-details">
-      <h1>Faith</h1>
+      <h1>Zett</h1>
       <h2>Coach</h2>
       <div class="interests">
-        <strong>Into:</strong> Strength Training | Pilates | Yoga | Movies | Travel | Food
+        <strong>Into:</strong> I’m into: Body Transformation, Strength Training, Fat Loss, Muscle Building & Kickboxing.
       </div>
 
       <div class="section-toggle">
@@ -252,10 +252,13 @@
       <div id="toggle-section" class="section-block">
         <h3 id="toggle-title">Skills</h3>
         <ul id="toggle-content">
-          <li>Fat Loss & Body recomposition</li>
-          <li>Strength Training</li>
-          <li>Hyperytrophy</li>
-          <li>Deep core strengthening</li>
+          <li>Over 10 years of health coaching experience </li>
+          <li>Body Transformation & Fat Loss</li>
+          <li>Muscle Building & Strength</li>
+          <li>Functional Fitness & Conditioning</li>
+          <li>Kickboxing & Performance Training</li>
+          <li>Personalised Coaching & Lifestyle Management</li>
+          <li>Sport Massage</li>
         </ul>
       </div>
 
@@ -293,12 +296,22 @@
   <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
   <script>
     const skills = [
-    "Fat Loss & Body Recomposition",
-    "Strength Training",
-    "Hypertrophy",
-    "Deep Core Strengthing"
+    "Over 10 years of health coaching experience",
+    "Body Transformation & Fat Loss",
+    "Muscle Building & Strength",
+    "Functional Fitness & Conditioning",
+    "Kickboxing & Performance Training",
+    "Personalised Coaching & Lifestyle Management",
+    "Sport Massage"
     ];
-    const certifications = ["No Certifications available yet. Check back soon!"];
+    const certifications = [
+    "American Sports & Fitness association",
+    "Muay Thai kickboxing lvl 1&2",
+    "Weightlifting Foundation course ",
+    "Sports Massage lvl 1&2",
+    "Body transformation Specialist lvl 1&2",
+    "Fundamental of Mobility training",
+    "Pre & post natal for fitness professionals (MishWright)"];
 
     function showSkills() {
       document.getElementById("toggle-title").textContent = "Skills";
@@ -312,9 +325,9 @@
 
     function generateQRCode() {
       const memberId = document.getElementById("memberId").value || "___________";
-      const email = "Faith.Lu@virginactive.com.sg";
+      const email = "zettrial.candra@virginactive.com.sg";
       const subject = "Training Inquiry";
-      const body = `Hello Faith,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0AI am interested in more about personal training and would like to have a wellness consultation.`;
+      const body = `Hello Zett,%0D%0A%0D%0AMy Member ID is: ${memberId}%0D%0A%0D%0AI am interested in more about personal training and would like to have a wellness consultation.`;
 
 
       const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
